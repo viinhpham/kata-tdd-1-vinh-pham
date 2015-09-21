@@ -1,5 +1,10 @@
 package org.vinh.kata.tdd;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 /**
  * @author Vinh Pham
  * @since 9/20/15.
@@ -15,6 +20,15 @@ public class Calculator {
 		return instance;
 	}
 	public int add(String param){
-		return 0;
+		if (null == param || param.isEmpty()){
+			return 0;
+		}
+		if (param.length() == 1){
+			return Integer.valueOf(param);
+		}
+		String[] listTokens = param.split(",");
+		List<Integer> listInt = Arrays.stream(listTokens).map(Integer::valueOf).collect(Collectors.toList());
+
+		return listInt.stream().mapToInt(Integer::intValue).sum() ;
 	}
 }
