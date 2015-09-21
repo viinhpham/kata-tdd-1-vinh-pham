@@ -9,10 +9,16 @@
     <version>1.0-SNAPSHOT</version>
     <properties>
         <junit.version>4.12</junit.version>
+        <mockito.version>1.10.19</mockito.version>
         <maven.compile.version>3.3</maven.compile.version>
         <source.compile.version>1.8</source.compile.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito.version}</version>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
