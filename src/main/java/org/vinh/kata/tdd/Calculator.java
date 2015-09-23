@@ -3,7 +3,6 @@ package org.vinh.kata.tdd;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * @author Vinh Pham
@@ -26,7 +25,7 @@ public class Calculator {
 		if (param.length() == 1){
 			return Integer.valueOf(param);
 		}
-		String[] listTokens = param.split(",");
+		String[] listTokens = param.split("[//,;\\n]");
 		List<Integer> listInt = Arrays.stream(listTokens).map(Integer::valueOf).collect(Collectors.toList());
 
 		return listInt.stream().mapToInt(Integer::intValue).sum() ;
