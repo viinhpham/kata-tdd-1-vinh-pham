@@ -5,6 +5,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -49,6 +50,14 @@ public class CalculatorTest {
 	}
 	@Test
 	 public void testAddShouldReturnResult() throws Exception{
-		assertEquals(3,calculator.add("1,2"));
+		assertEquals(3, calculator.add("1,2"));
+	}
+	@Test
+	public void testAddShouldReturnResultOnNegativeNumber() throws Exception{
+		assertEquals(6,calculator.add("-1,2,5"));
+	}
+	@Test
+	public void testAddShouldReturnResultOnNewLineNumber() throws Exception{
+		assertEquals(8,calculator.add("1\n2,5"));
 	}
 }
